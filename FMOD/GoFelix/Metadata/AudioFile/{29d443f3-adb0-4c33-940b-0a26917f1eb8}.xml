@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{29d443f3-adb0-4c33-940b-0a26917f1eb8}">
+		<property name="assetPath">
+			<value>Kaj_Munks_Vej_19_7.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.0026666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{239b6bd1-053e-48e2-aa2d-2fb6872f47fa}</destination>
+		</relationship>
+	</object>
+</objects>

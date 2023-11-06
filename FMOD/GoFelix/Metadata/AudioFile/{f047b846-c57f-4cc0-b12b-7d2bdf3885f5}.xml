@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f047b846-c57f-4cc0-b12b-7d2bdf3885f5}">
+		<property name="assetPath">
+			<value>mhm.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.472</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{239b6bd1-053e-48e2-aa2d-2fb6872f47fa}</destination>
+		</relationship>
+	</object>
+</objects>
