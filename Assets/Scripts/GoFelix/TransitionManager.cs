@@ -3,17 +3,6 @@ using FMODUnity;
 
 public class TransitionManager : MonoBehaviour
 {
-    public StudioEventEmitter transitionSound;
-
-    private void Start()
-    {
-        // Play the sound
-        transitionSound.Play();
-
-        // Wait 3 seconds
-        Invoke("LoadNextGame", 3f);
-    }
-
     public void LoadNextGame()
     {
         // Pick a random game
