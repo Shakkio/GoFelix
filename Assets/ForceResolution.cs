@@ -11,18 +11,11 @@ public class ForceResolution : MonoBehaviour
         SetResolution();
     }
 
-    private void OnValidate()
-    {
-        if (Camera.main == null) return;
-
-        SetResolution();
-    }
-
     private void SetResolution()
     {
         // Calculate the width to maintain a 9:16 aspect ratio
         float targetAspect = 9f / 16f;
-        float windowAspect = (float)Screen.width / (float)Screen.height;
+        float windowAspect = (float)Display.main.renderingWidth / (float)Display.main.renderingHeight;
         float scaleHeight = windowAspect / targetAspect;
 
         // If the calculated height is less than the current height, add pillar boxes
