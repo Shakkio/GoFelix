@@ -304,6 +304,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7956443659130282481, guid: c630962650d22d845abd5e94d810d12d, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956443659130282481, guid: c630962650d22d845abd5e94d810d12d, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956443659130282481, guid: c630962650d22d845abd5e94d810d12d, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.29288194
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956443659130282481, guid: c630962650d22d845abd5e94d810d12d, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.10704873
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956443659130282481, guid: c630962650d22d845abd5e94d810d12d, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0.430694
       objectReference: {fileID: 0}
