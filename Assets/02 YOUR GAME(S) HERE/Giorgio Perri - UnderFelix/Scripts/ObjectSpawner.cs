@@ -9,7 +9,7 @@ public class ObjectSpawner : Singleton<ObjectSpawner>
     
     public void StartSpawning()
     {
-        InvokeRepeating("Spawn", 0, .9f);
+        InvokeRepeating("Spawn", 0, .45f);
     }
     
     void Spawn()

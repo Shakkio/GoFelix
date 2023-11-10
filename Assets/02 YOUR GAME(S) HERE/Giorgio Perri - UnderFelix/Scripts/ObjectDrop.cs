@@ -8,7 +8,7 @@ public class ObjectDrop : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0, -2.5f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, -4f);
         Invoke("Die", 3);
     }
 
