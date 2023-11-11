@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/02 YOUR GAME(S) HERE/Learus/Scene.unity
     guid: ccc34fe719bb7774ba16db8e3c2b2e88
+  - enabled: 1
+    path: Assets/02 YOUR GAME(S) HERE/DOOM/DOOM.unity
+    guid: d2568191444561b4f813fea5903bcab3
+  - enabled: 1
+    path: Assets/02 YOUR GAME(S) HERE/Giorgio Perri - UnderFelix/Scenes/UnderFelix.unity
+    guid: 90fc083ccc0b245bfb03c600985f4902
   m_configObjects: {}
