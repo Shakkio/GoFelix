@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GoFelixManager : PersistentSingleton<GoFelixManager>
 {
     public int Lives = 3;
-    public bool win = false;
+    public bool win = true;
     
     void Start()
     {
@@ -16,7 +16,7 @@ public class GoFelixManager : PersistentSingleton<GoFelixManager>
     
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        win = false;
+        win = true;
 
         if (SceneManager.GetActiveScene().buildIndex > 1)
         {

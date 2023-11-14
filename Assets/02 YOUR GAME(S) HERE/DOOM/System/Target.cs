@@ -5,87 +5,94 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using UnityEngine.VFX;
 
-public class Target : MonoBehaviour
+namespace DOOMSpace
 {
-    public float moveSpeed;
-    public VisualEffect vfx;
-    public SpriteRenderer spriteRenderer;
-    
-    float deathTime = 0.0f;
-    public float deathTimer = 1.5f;
-
-    AudioSource audio;
-    public AudioClip[] clips;
-
-    bool dead = false;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Target : MonoBehaviour
     {
-        audio = GetComponent<AudioSource>();
-        audio.clip = clips[Random.Range(0, clips.Count())];
-        audio.loop = false;
-        audio.PlayOneShot(audio.clip);
-    }
+        public float moveSpeed;
+        public VisualEffect vfx;
+        public SpriteRenderer spriteRenderer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        Transform rec= transform;
+        float deathTime = 0.0f;
+        public float deathTimer = 1.5f;
 
-        if(dead){
-            audio.Stop();
+        AudioSource audio;
+        public AudioClip[] clips;
 
-            rec= spriteRenderer.transform;
-            rec.position = new Vector3(
-                rec.position.x, 
-                rec.position.y + Time.deltaTime * moveSpeed * Random.Range(0.5f, 2.5f),
-                rec.position.z + Time.deltaTime * moveSpeed * 2.5f
-            );
-            
-            Transform vfRec= vfx.transform;
-            vfRec.position = new Vector3(
-                vfRec.position.x, 
-                vfRec.position.y,
-                vfRec.position.z - Time.deltaTime * moveSpeed
-            );
-            
-            return;
+        bool dead = false;
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            audio = GetComponent<AudioSource>();
+            audio.clip = clips[Random.Range(0, clips.Count())];
+            audio.loop = false;
+            audio.PlayOneShot(audio.clip);
         }
 
-        rec.position += rec.forward * Time.deltaTime * moveSpeed;
-    }
+        // Update is called once per frame
+        void Update()
+        {
+            Transform rec = transform;
 
-    public void Hit(){
-        dead = true;
-        vfx.transform.SetParent(null);
-        //GetComponent<GraphicRaycaster>().enabled = false;
+            if (dead)
+            {
+                audio.Stop();
 
-        Debug.Log("Hit");
-        StartCoroutine(Kill());
-    }
+                rec = spriteRenderer.transform;
+                rec.position = new Vector3(
+                    rec.position.x,
+                    rec.position.y + Time.deltaTime * moveSpeed * Random.Range(0.5f, 2.5f),
+                    rec.position.z + Time.deltaTime * moveSpeed * 2.5f
+                );
 
-    IEnumerator Kill(){
-        vfx.Play();
+                Transform vfRec = vfx.transform;
+                vfRec.position = new Vector3(
+                    vfRec.position.x,
+                    vfRec.position.y,
+                    vfRec.position.z - Time.deltaTime * moveSpeed
+                );
 
-        var rec = spriteRenderer.transform;
+                return;
+            }
 
-        while(deathTime <= deathTimer){
-            float t = deathTime / deathTimer;
+            rec.position += rec.forward * Time.deltaTime * moveSpeed;
+        }
 
-            rec.Rotate( new Vector3(
-                    (1.0f - t) * 90.0f,
-                    (1.0f - t) * 35.0f,
-                    (1.0f - t) * 35.0f
-                )
-            );
-            spriteRenderer.color = new Color(1.0f - t / 2.0f, 0, 0);
+        public void Hit()
+        {
+            dead = true;
+            vfx.transform.SetParent(null);
+            //GetComponent<GraphicRaycaster>().enabled = false;
 
-            deathTime += Time.deltaTime;
+            Debug.Log("Hit");
+            StartCoroutine(Kill());
+        }
+
+        IEnumerator Kill()
+        {
+            vfx.Play();
+
+            var rec = spriteRenderer.transform;
+
+            while (deathTime <= deathTimer)
+            {
+                float t = deathTime / deathTimer;
+
+                rec.Rotate(new Vector3(
+                        (1.0f - t) * 90.0f,
+                        (1.0f - t) * 35.0f,
+                        (1.0f - t) * 35.0f
+                    )
+                );
+                spriteRenderer.color = new Color(1.0f - t / 2.0f, 0, 0);
+
+                deathTime += Time.deltaTime;
+                yield return null;
+            }
+
+            //Destroy(this.gameObject);
             yield return null;
         }
-
-        //Destroy(this.gameObject);
-        yield return null;
     }
 }

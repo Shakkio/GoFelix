@@ -2,26 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : Singleton<ObjectSpawner>
+namespace Underfelix
 {
-    public GameObject Piss;
-    public GameObject Syringe;
-    
-    public void StartSpawning()
+    public class ObjectSpawner : Singleton<ObjectSpawner>
     {
-        InvokeRepeating("Spawn", 0, .45f);
-    }
-    
-    void Spawn()
-    {
-        int random = Random.Range(0, 2);
-        
-        Instantiate(random == 0 ? Piss : Syringe, new Vector3(Random.Range(-1, 2), -0.5f, 0), Quaternion.identity,
-            transform);
-    }
+        public GameObject Piss;
+        public GameObject Syringe;
 
-    public void StopSpawning()
-    {
-        CancelInvoke("Spawn");
+        public void StartSpawning()
+        {
+            InvokeRepeating("Spawn", 0, .45f);
+        }
+
+        void Spawn()
+        {
+            int random = Random.Range(0, 2);
+
+            Instantiate(random == 0 ? Piss : Syringe, new Vector3(Random.Range(-1, 2), -0.5f, 0), Quaternion.identity,
+                transform);
+        }
+
+        public void StopSpawning()
+        {
+            CancelInvoke("Spawn");
+        }
     }
 }

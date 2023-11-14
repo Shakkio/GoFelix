@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BodyCollisions : MonoBehaviour
+namespace DOOMSpace
 {
-    void OnCollisionEnter(){
-        DOOM.Instance.Die();
+    public class BodyCollisions : MonoBehaviour
+    {
+        void OnCollisionEnter()
+        {
+            DOOM.Instance.Die();
+        }
     }
 }

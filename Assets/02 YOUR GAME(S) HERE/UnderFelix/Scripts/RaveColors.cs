@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RaveColors : MonoBehaviour
+namespace Underfelix
 {
-    private Image _image;
-    void Start()
+    public class RaveColors : MonoBehaviour
     {
-        _image = GetComponent<Image>();
-        InvokeRepeating("ChangeColor", 0, .1f);
-    }
+        private Image _image;
 
-    void ChangeColor()
-    {
-        _image.color = new Color(Random.Range(0, 255), Random.Range(0, 255), Random.Range(0, 255));
+        void Start()
+        {
+            _image = GetComponent<Image>();
+            InvokeRepeating("ChangeColor", 0, .1f);
+        }
+
+        void ChangeColor()
+        {
+            _image.color = new Color(Random.Range(0, 255), Random.Range(0, 255), Random.Range(0, 255));
+        }
     }
 }

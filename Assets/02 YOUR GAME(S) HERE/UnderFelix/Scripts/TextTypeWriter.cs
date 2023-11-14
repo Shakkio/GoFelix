@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TextTypeWriter : MonoBehaviour
+namespace Underfelix
 {
-    private void OnEnable()
+    public class TextTypeWriter : MonoBehaviour
     {
-        StartCoroutine(TypeText());
-        GetComponent<AudioSource>().Play();
-    }
-    
-    IEnumerator TypeText()
-    {
-        string text = GetComponent<TextMeshProUGUI>().text;
-        GetComponent<TextMeshProUGUI>().text = "";
-        foreach (char c in text)
+        private void OnEnable()
         {
-            GetComponent<TextMeshProUGUI>().text += c;
-            yield return new WaitForSeconds(0.025f);
+            StartCoroutine(TypeText());
+            GetComponent<AudioSource>().Play();
+        }
+
+        IEnumerator TypeText()
+        {
+            string text = GetComponent<TextMeshProUGUI>().text;
+            GetComponent<TextMeshProUGUI>().text = "";
+            foreach (char c in text)
+            {
+                GetComponent<TextMeshProUGUI>().text += c;
+                yield return new WaitForSeconds(0.025f);
+            }
         }
     }
 }
