@@ -991,6 +991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac537c7dc566ee408fffebcdd8df377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  win: 0
 --- !u!4 &708777314
 Transform:
   m_ObjectHideFlags: 0
@@ -1435,7 +1436,7 @@ MonoBehaviour:
   targetParent: {fileID: 79853342}
   target: {fileID: 6822726500764451710, guid: e2e4830108d285440badb6c234662c0b, type: 3}
   flyEnemies: {fileID: 7151044479254611470, guid: b7c914f554e5a80408b069624b8dd460, type: 3}
-  maxTimeToPlay: 7.2
+  maxTimeToPlay: 7
   timePlayed: 0
   walkSpawnRateChange:
     serializedVersion: 2
@@ -2140,8 +2141,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.025150001, y: 0.042850018, z: 0}
-    m_Extent: {x: 0.53345, y: 0.53275, z: 0}
+    m_Center: {x: -0.023900002, y: 0.03175001, z: 0}
+    m_Extent: {x: 0.53489995, y: 0.52865, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

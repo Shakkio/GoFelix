@@ -37,7 +37,7 @@ public class ObjectDrop : MonoBehaviour
             
             col.gameObject.GetComponent<AudioSource>().Play();
             col.gameObject.GetComponent<HeartController>().BreakSprite();
-            UnderFelixManager.Instance.Win = false;
+            GoFelixManager.Instance.win = false;
         }
     }
     

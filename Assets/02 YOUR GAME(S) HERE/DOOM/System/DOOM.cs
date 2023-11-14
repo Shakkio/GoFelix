@@ -17,7 +17,7 @@ public class DOOM : MonoBehaviour
     public GameObject target;
     public GameObject flyEnemies;
 
-    public float maxTimeToPlay = 7.2f;
+    public float maxTimeToPlay = 7f;
     public float timePlayed = 0;
     //
     public AnimationCurve walkSpawnRateChange;
@@ -28,8 +28,6 @@ public class DOOM : MonoBehaviour
     public AnimationCurve flySpawnRateChange;
     float flySpawnRate;
     float flyWaitTime = 0;
-    
-    public bool HasWon = true;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +36,7 @@ public class DOOM : MonoBehaviour
             Instance = this;
 
         Cursor.visible = false;
-        Invoke("GoFelix", maxTimeToPlay);
+        Invoke("GoFelix", 0.2f);
     }
 
     // Update is called once per frame
@@ -101,11 +99,10 @@ public class DOOM : MonoBehaviour
         gameOver.gameObject.SetActive(true);
         felixController.gameObject.SetActive(false);
         canvas.enabled = false;
+        GoFelixManager.Instance.win = false;
     }
 
     void GoFelix(){
-        if(HasWon)
-            GoFelixManager.Instance.Win();
-        else GoFelixManager.Instance.Lose();
+        GoFelixManager.Instance.win = true;
     }
 }

@@ -25,11 +25,6 @@ namespace Learus
 
         public float timer = 7f;
 
-        void Start()
-        {
-
-        }
-
         public void Play()
         {
             ChangeWord();
@@ -41,10 +36,7 @@ namespace Learus
 
             if (timer <= 0)
             {
-                if (HitKeys > AllKeys / 2)
-                    GoFelixManager.Instance.Win();
-                else
-                    GoFelixManager.Instance.Lose();
+                GoFelixManager.Instance.win = HitKeys > AllKeys / 2;
             }
 
             if (Input.anyKeyDown)
