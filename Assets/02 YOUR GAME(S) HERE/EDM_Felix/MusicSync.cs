@@ -91,8 +91,6 @@ namespace Learus
                     action.action();
 
                     if (sync.Done()) yield break;
-                    Debug.Log("quarter");
-                    
 
                     action = sync.next();
                 }

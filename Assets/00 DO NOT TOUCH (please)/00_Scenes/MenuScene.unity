@@ -508,7 +508,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 728658374}
         m_TargetAssemblyTypeName: GoFelixManager, Assembly-CSharp
-        m_MethodName: Win
+        m_MethodName: NextGameFree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1053,6 +1053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac537c7dc566ee408fffebcdd8df377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  win: 0
 --- !u!1 &925310845
 GameObject:
   m_ObjectHideFlags: 0
