@@ -38,6 +38,11 @@ public class felixDarkness : MonoBehaviour
             {
                 spriteRenderer.material = revealedFelix;
                 print ("You found me!");
+                GoFelixManager.Instance.win = true;
+            }
+            else
+            {
+                GoFelixManager.Instance.win = false;
             }
         }
     }

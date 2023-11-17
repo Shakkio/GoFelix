@@ -272,9 +272,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 7139416344844775303, guid: 2ac7de2eae319414a9a5c67ddaf7be15, type: 3}
-  - {fileID: 1126184875759900484, guid: f2587f857c317124eb05dc7bf6b41bd2, type: 3}
-  - {fileID: 1126184875759900484, guid: f2587f857c317124eb05dc7bf6b41bd2, type: 3}
-  - {fileID: 1126184875759900484, guid: f2587f857c317124eb05dc7bf6b41bd2, type: 3}
+  - {fileID: 5368914025033248371, guid: 64fd83ae1fbec86438f3719ec9a8b6f3, type: 3}
+  - {fileID: 1358465241359327723, guid: efeb4c7ba7f2df24a8a0defe63838c55, type: 3}
+  - {fileID: 7005227430064267096, guid: 549cb92c556167c48a9f202dd3b4045b, type: 3}
   screenWidth: 6.5
   screenHeight: 9.5
 --- !u!212 &2029841787 stripped
