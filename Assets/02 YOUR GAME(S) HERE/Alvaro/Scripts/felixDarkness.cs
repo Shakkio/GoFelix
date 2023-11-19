@@ -10,9 +10,17 @@ public class felixDarkness : MonoBehaviour
 
     public SpriteRenderer flashLightRenderer;
 
+    public GameObject gameOverImage; 
+    public float timeLimit = 7f; 
+
+    private float currentTime;
+    private bool gameActive = true;
+
     void Start()
     {
-
+        currentTime = timeLimit;
+        gameOverImage.SetActive(false);
+        UpdateUI();
     }
 
     void Update()
@@ -24,6 +32,20 @@ public class felixDarkness : MonoBehaviour
         {
             DiscoverObjects();
         }
+
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0f)
+        {
+            GoFelixManager.Instance.win = false;
+        }
+
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        
     }
 
     void DiscoverObjects()
@@ -36,7 +58,6 @@ public class felixDarkness : MonoBehaviour
 
             if (spriteRenderer != null)
             {
-                spriteRenderer.material = revealedFelix;
                 print ("You found me!");
                 GoFelixManager.Instance.win = true;
             }

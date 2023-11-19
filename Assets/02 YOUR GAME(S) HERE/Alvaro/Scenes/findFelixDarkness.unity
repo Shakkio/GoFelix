@@ -243,6 +243,8 @@ MonoBehaviour:
     m_Bits: 2048
   revealedFelix: {fileID: 2100000, guid: fb76c48dcb9c37f45998c34f61a131c3, type: 2}
   flashLightRenderer: {fileID: 2029841787}
+  gameOverImage: {fileID: 0}
+  timeLimit: 7
 --- !u!4 &1741963153
 Transform:
   m_ObjectHideFlags: 0
@@ -275,7 +277,7 @@ MonoBehaviour:
   - {fileID: 5368914025033248371, guid: 64fd83ae1fbec86438f3719ec9a8b6f3, type: 3}
   - {fileID: 1358465241359327723, guid: efeb4c7ba7f2df24a8a0defe63838c55, type: 3}
   - {fileID: 7005227430064267096, guid: 549cb92c556167c48a9f202dd3b4045b, type: 3}
-  screenWidth: 6.5
+  screenWidth: 6
   screenHeight: 9.5
 --- !u!212 &2029841787 stripped
 SpriteRenderer:
