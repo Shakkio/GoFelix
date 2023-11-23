@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,12 @@ namespace GolFelix
         //based on the strength of the swing, ranging from 0 to 90
         
         public GameObject rotateObject;
+
+        private void Start()
+        {
+            // set the initial strength of the swing to a random value between minStrength and maxStrength
+            strength = UnityEngine.Random.Range(minStrength, maxStrength);
+        }
 
         private void Update()
         {

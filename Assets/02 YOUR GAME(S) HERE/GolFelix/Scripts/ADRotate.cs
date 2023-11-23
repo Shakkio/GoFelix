@@ -15,9 +15,19 @@ namespace GolFelix
         public float minAngle = -30f;
         public float angle = 0f;
         public float angleChange = 1f;
+        
+        public bool didShoot;
+
+        private void Start()
+        {
+            // set the initial rotation of the object to a random angle between minAngle and maxAngle
+            angle = UnityEngine.Random.Range(minAngle, maxAngle);
+        }
 
         private void Update()
         {
+            if (didShoot) return;
+            
             if (Input.GetKey(KeyCode.D))
             {
                 angle += angleChange;
