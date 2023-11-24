@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2783720017774099167}
   m_Layer: 11
   m_Name: Cap
-  m_TagString: Untagged
+  m_TagString: Victory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

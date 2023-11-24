@@ -237,14 +237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57753d09613035040a5ea0c6e751490d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spotlightRadius: 5
-  discoveredLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  revealedFelix: {fileID: 2100000, guid: fb76c48dcb9c37f45998c34f61a131c3, type: 2}
+  victoryScreen: {fileID: 0}
+  clickSound: {fileID: 0}
+  gameDuration: 7
   flashLightRenderer: {fileID: 2029841787}
-  gameOverImage: {fileID: 0}
-  timeLimit: 7
 --- !u!4 &1741963153
 Transform:
   m_ObjectHideFlags: 0
