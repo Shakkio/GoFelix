@@ -30,9 +30,13 @@ public class felixDarkness : MonoBehaviour
             LoseGame();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        bool mousePressed = Input.GetMouseButtonDown(0);
+
+        if (mousePressed) 
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            //RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
             if (hit.collider != null)
             {
