@@ -6,29 +6,23 @@ public class felixDarkness : MonoBehaviour
 {
     public GameObject victoryScreen;
     public AudioClip clickSound;
+
     public float gameDuration = 7f;
 
     public SpriteRenderer flashLightRenderer;
 
-    private bool hasWon = false;
-    private float timer = 0f;
-
     private void Start()
     {
-        
+        GoFelixManager.Instance.win = false;
     }
+
+
 
     private void Update()
     {
+        Debug.Log(GoFelixManager.Instance.win);
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         flashLightRenderer.transform.position = new Vector3(mousePosition.x, mousePosition.y, 0f);
-
-        timer += Time.deltaTime;
-
-        if (timer >= gameDuration && !hasWon)
-        {
-            LoseGame();
-        }
 
         bool mousePressed = Input.GetMouseButtonDown(0);
 
@@ -54,16 +48,8 @@ public class felixDarkness : MonoBehaviour
 
     private void WinGame()
     {
-        print("I won!");
-        hasWon = true;
-        victoryScreen.SetActive(true);
         GoFelixManager.Instance.win = true;
+        victoryScreen.SetActive(true);
     }
 
-    private void LoseGame()
-    {
-        print("I lost!");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //GoFelixManager.Instance.win = false;
-    }
 }
