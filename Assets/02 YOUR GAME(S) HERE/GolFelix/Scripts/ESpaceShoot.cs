@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 namespace GolFelix
 {
@@ -18,6 +19,9 @@ namespace GolFelix
         private ADRotate _adRotate;
 
         private bool canshoot = true;
+
+        public VisualEffect ballVFX;
+        public AudioSource hitSFX;
         
         private void Start()
         {
@@ -50,6 +54,8 @@ namespace GolFelix
             
             ball.GetComponent<Rigidbody>().isKinematic = false;
             ball.GetComponent<Rigidbody>().AddForce(ball.transform.forward * (strength * 10f));
+            ballVFX.Play();
+            hitSFX.Play();
         }
     }
 }
