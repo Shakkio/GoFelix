@@ -12,6 +12,7 @@ public class ScoreHole : MonoBehaviour
     public AudioSource nicecSfx;
     
     public Image img;
+    public Image darkImg;
     
     private void Start()
     {
@@ -35,17 +36,20 @@ public class ScoreHole : MonoBehaviour
         nicecSfx.Play();
 
         float elapsed = 0f;
-        float duration = 1.5f;
+        float duration = 0.5f;
 
         while(elapsed <= duration){
             float t = elapsed / duration;
 
-            img.color = new Color(1.0f,1.0f,1.0f, t);
+            img.color       = new Color(1.0f,1.0f,1.0f, t);
+            darkImg.color   = new Color(0f,0f,0f, t);
 
             elapsed += Time.deltaTime;
+            yield return null;
         }
         
-        img.color = new Color(1.0f,1.0f,1.0f, 1.0f);
+        img.color       = new Color(1.0f,1.0f,1.0f, 1.0f);
+        darkImg.color   = new Color(0f,0f,0f, 1.0f);
 
         yield return null;
     }
