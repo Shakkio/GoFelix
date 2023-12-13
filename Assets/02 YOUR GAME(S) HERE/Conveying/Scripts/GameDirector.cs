@@ -8,6 +8,9 @@ public class GameDirector : MonoBehaviour
     GameObject chosenGameObject;
     public int chosenId;
 
+
+
+
     private void Awake()
     {
         RandomizeChosen();

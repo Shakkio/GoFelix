@@ -16,16 +16,31 @@ public class Demon : MonoBehaviour
 
     bool interactionOver;
     public GameDirector gameDirector;
+
+    AudioSource audioSource;
+    public AudioClip eatSound;
+    bool up = false;
+    public AudioClip doneSound;
+    public AudioClip upSound;
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
         animator.Play("DemonAppear");
         box = GetComponent<BoxCollider2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("DemonAppear") && !up)
+        {
+            up = true;
+            audioSource.PlayOneShot(upSound);
+        }
+
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("DemonPrepare"))
         {
             if(hand.isHolding == false)
@@ -56,6 +71,7 @@ public class Demon : MonoBehaviour
                 {
                     interactionOver = true;
                     animator.Play("DemonGood");
+                    audioSource.PlayOneShot(doneSound);
                 }
                 else if (good)
                 {
@@ -84,6 +100,8 @@ public class Demon : MonoBehaviour
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("DemonPrepare"))
         {
+            audioSource.PlayOneShot(eatSound);
+
             for (int i = 0; i < gameDirector.convetabletees.Count; i++)
             {
                 if(item.GetComponent<SpriteRenderer>().sprite.name == gameDirector.convetabletees[i].GetComponent<SpriteRenderer>().sprite.name)
